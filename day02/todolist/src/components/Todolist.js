@@ -17,22 +17,23 @@ function Todolist(props) {
   } else {
     stateInt = false;
   }
+
   return (
     <>
-    
       {stateInt ? (
         <Todolist2N>
-          <span>{props.state.id}</span>.{props.state.Todo}
+          <span>{props.state.id}. </span>
+          {props.state.Todo}
           <button>완료</button>
         </Todolist2N>
       ) : (
         <Todolist1N>
-          <span>{props.state.id}</span>.{props.state.Todo}
+          <span>{props.state.id}. </span>
+          {props.state.Todo}
           <button>완료</button>
         </Todolist1N>
       )}
     </>
   );
 }
-
 export default Todolist;
