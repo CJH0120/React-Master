@@ -4,19 +4,41 @@ import styled from "styled-components";
 import Avatar from "./avatar"
 import Comment from "./comment"
 import CommentForm from "./commentForm"
+import {useDispatch, useSelector} from "react-redux";
+import { REMOVE_POST_REQUEST, UPDATE_POST_REQUEST } from "../../../reducer/post";
+import {useInput} from "../../../hook/useInput"
 
 moment.locale("ko");
 
 const Post = ({post}) => {
-
-    console.log(post)
+    const dispatch = useDispatch();
+    const {info} = useSelector((state)=>state.user);
     const [editPost, setEditPost] = useState(false);
     const [commentBox, setCommentBox] = useState(false);
+    const [content, onChangeContent] = useInput(post.content);
 
     const onToggleComment = useCallback((e) => {
         e.preventDefault();
         setCommentBox((prev)=>!prev)
     },[])
+
+    const onRemovePost = useCallback(()=>{
+        dispatch({
+            type: REMOVE_POST_REQUEST,
+            data: post.id,
+        })
+    },[])
+
+    const onUpdatePost = useCallback(()=>{
+        dispatch({
+            type: UPDATE_POST_REQUEST,
+            data: {
+                PostId: post.id,
+                content: content
+            }
+        })
+        setEditPost((prev) => !prev);
+    },[content])
 
     return (
         <StyledPost>
@@ -29,30 +51,35 @@ const Post = ({post}) => {
                     </div>
                 </div>
                 <div>
+                    {info && info.id === post.User.id && (
                     <button className="editBtn" onClick={()=>{
                         setEditPost((prev)=>!prev)
                     }}>
                         수정
                     </button>
-                    <button className="editBtn">삭제</button>
+                    )}       
+                    {info && info.id === post.User.id && (
+                    <button className="editBtn" onClick={onRemovePost}>삭제</button>   
+                    )}
+                        
                 </div>
             </div>
             {editPost ? (
                 <>
-                    <textarea cols="80" row="5"/>
-                    <button className="ediBtn updateBtn">수정하기</button>
+                    <textarea cols="80" row="5" value={content} onChange={onChangeContent}/>
+                    <button className="editBtn updateBtn" onClick={onUpdatePost}>수정하기</button>
                 </>
             ) : (
                 <div className="content">{post.content}</div>
             )}
             <div className="comment" onClick={onToggleComment}>
-                <div className="total">댓글 1개</div>
+                <div className="total">댓글 {post.Comments.length}개</div>
                 <div className="commentBtn">댓글 달기</div>
             </div>
             {commentBox && (
                 <>
-                    <CommentForm/>
-                    <Comment/>
+                    {info && <CommentForm post={post}/>}
+                    <Comment comment={post.Comments} postId={post.id}/>
                 </>
             )}
         </StyledPost>

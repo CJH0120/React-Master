@@ -1,15 +1,20 @@
-import React, { useCallback, useState } from "react"
-import {Link} from "react-router-dom";
+import React, { useCallback, useEffect, useState } from "react"
+import {Link, useNavigate} from "react-router-dom";
 import styled from "styled-components";
 import { useInput } from "../../hook/useInput";
+import { useSelector, useDispatch } from "react-redux";
+import { REGISTER_DONE_REQUEST, REGISTER_REQUEST } from "../../reducer/user";
 
 const RegisterMain = () => {
+    const dispatch = useDispatch();
+    const navigator = useNavigate();
     const [email,onChangeUserEmail] = useInput("");
     const [name, onChangeUserName] = useInput("");
     const [password, onChangeUserPassword] = useInput("");
 
     const [confirmPassword, setConfirmPassword] = useState("");
     const [passwordCheckMessage, setPasswordCheckMessage] = useState(false);
+    const {registerDone, registerError} = useSelector((state)=>state.user);
 
     const onChangeConfirmPassword = useCallback(
         (event) => {
@@ -19,9 +24,41 @@ const RegisterMain = () => {
         [password]
     )
 
+    useEffect(()=>{
+        if(registerError){
+            alert(registerError)
+        }
+    },[registerError])
+
+    useEffect(()=>{
+        if(registerDone){
+            navigator("/", {replace: true});
+            dispatch({
+                type: REGISTER_DONE_REQUEST
+            })
+        }
+    },[registerDone])
+
+
+    const onRegiset = useCallback((e)=>{
+        e.preventDefault();
+        if( password !== confirmPassword){
+            return setPasswordCheckMessage(true);
+        }
+
+        dispatch({
+            type: REGISTER_REQUEST,
+            data: {
+                email,
+                name,
+                password
+            }
+        })
+    },[password, confirmPassword])
+
     return (
         <>
-            <RegisterForm>
+            <RegisterForm onSubmit={onRegiset}>
                 <h1>회원가입</h1>   
                 <div>
                     <label htmlFor="user-id"></label>
@@ -73,7 +110,7 @@ const RegisterMain = () => {
                 {passwordCheckMessage && (
                     <CheckMessage>비밀번호가 일치하지 않습니다</CheckMessage>
                 )}
-                <button>가입하기</button>
+                <button type="submit">가입하기</button>
                 <Link to="/">돌아가기</Link>
             </RegisterForm>
         </>

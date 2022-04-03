@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useCallback } from "react";
 import moment from "moment";
 import styled from "styled-components";
+import {useSelector, useDispatch} from "react-redux";
+import { REMOVE_COMMENT_REQUEST } from "../../../reducer/post";
 
 moment.locale("ko");
 
-const Comment = () => {
+const Comment = ({comment, postId}) => {
+    const dispatch =useDispatch();
+    const {info} = useSelector((state)=>state.user);
+    
+    const onRemoveComment = useCallback((commentId) => (e) =>{
+        e.preventDefault();
+        dispatch({
+            type: REMOVE_COMMENT_REQUEST,
+            data: {
+                PostId: postId,
+                commentId: commentId,
+            }
+        })
+    },[])
+
         return (
             <StyledComment>
-                <div className="inner">
-                    <div className="username">찬솔님</div>
-                    <div className="text">내용 멋있네요</div>
-                    <div className="date">{moment().format("YYYY.MM.DD")}</div>
-                    <div className="replyBtn">💬</div>
-                    <div className="removeBtn">✖</div>
-                </div>
+            {comment && 
+                comment.map((v)=>(
+                    <div className="inner" key={v.id}>
+                        <div className="username">{v.User.nickname}</div>
+                        <div className="text">{v.content}</div>
+                        <div className="date">{moment().format("YYYY.MM.DD")}</div>
+                        <div className="replyBtn">💬</div>
+                        {info && info.id === v.User.id && (<div className="removeBtn" onClick={onRemoveComment(v.id)}>✖</div>)}
+                    </div>
+                ))}
             </StyledComment>
         )
 }

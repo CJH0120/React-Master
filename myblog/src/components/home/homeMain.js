@@ -8,16 +8,18 @@ import { LOAD_ALLPOSTS_REQUEST } from "../../reducer/post";
 const HomeMain = () => {
     const disptach = useDispatch();
     const {allPosts} = useSelector((state) => state.post);
+    const {info} = useSelector((state)=>state.user)
 
     useEffect(()=>{
+        if(!info){
         disptach({
             type: LOAD_ALLPOSTS_REQUEST,
-        });
+        })};
     },[]);
 
     return(
         <StyledWrap>
-            <PostForm/>
+            {info && <PostForm/>}
             {allPosts && allPosts.map((post) => <Post key={post.id} post={post}/>)}  
         </StyledWrap>
     )
