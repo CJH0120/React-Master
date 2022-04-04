@@ -1,0 +1,15 @@
+header,footer{
+  margin: 20px 0;
+}
+
+.main_warp{
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid steelblue;
+  
+}
+button{
+  width: 50px;
+  height: 20px;
+}

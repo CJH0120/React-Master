@@ -1,0 +1,49 @@
+.DiaryEditor{
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.nameinput{
+    margin: 20px auto;
+   
+        
+}
+.nameinput input {
+    height: 30px;
+    width: 80%;
+}
+
+.contentinput{
+    margin: 20px auto;
+
+}
+.contentinput textarea {
+    height: 150px;
+    width: 80%;
+    
+}
+.emtionselcet{
+    width: 50px;
+    margin-bottom: 20px;
+}
+.btn button{
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: steelblue;
+    margin: 10px auto;
+    
+}
+
+/* List */
+.diary_length{
+    text-align: left;
+}
+.DiaryList{
+    text-align: center;
+    border: 1px solid gray;
+    padding: 20px;
+    margin-top: 20px;
+}
