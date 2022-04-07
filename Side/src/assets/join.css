@@ -1,0 +1,48 @@
+.join_form{
+    width: 44%;
+    float: right;
+    border: 1px solid black;
+    margin: 0 auto
+}
+.join_form fieldset{
+   
+    width: 50%;
+    margin-left: 8em; 
+    text-align: center;
+    margin-top: 12.125em;
+}
+.join_form fieldset input{
+    height:2em;
+    margin-bottom: 0.625em;
+    font-size: 1.250em;
+    padding-left: 0.625em;
+    border-radius: 0.8rem;
+    border-color: steelblue;
+}
+.join_form fieldset h2{
+    margin-bottom: 1.875em;
+}
+.join_form fieldset div{
+    margin: 0 auto;
+   
+    width:16.250em;
+    text-align: left;
+}
+.join_form fieldset div:last-child{
+    text-align: center;
+}
+.join_form fieldset div span{
+    font-weight: bolder;
+    
+}
+.outbtn{
+   
+   
+    width: 100% !important;
+}
+.join_form_img{
+   margin-right: 5em;
+    width:3em;
+    height:3em;
+   
+}
