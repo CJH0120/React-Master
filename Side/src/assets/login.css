@@ -1,51 +1,118 @@
 .rightForm{
     width: 40%;
-    height: 100vh;
-    margin-left: 1em;
+    height: auto;
     float: right;
+    text-align: center;
+    margin-top: 150px;
     
 }
 
+.chooseMain button{
+    width: 170px;
+    height: 50px;
+    border:  none;
+    background-color: #ddd;
+   
+    
+}
+.ChooseLogin{
+    border-bottom: 1px solid steelblue !important;
+    
+}
+.ChooseLogin span{
+    color: steelblue;
+}
+.chooseMain span{
+    font-size: 25px;
+}
+
+.square_main{
+    background-color: white;
+    width: 340px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 40px;
+    
+    
+}
+
+
 .rightForm_wrap{
+   
+    margin: 0 auto;
     width: 31.25em;
-}
-.rightForm_wrap form{
-    margin-top: 2.5em;
-    width: 100%;
-    height: auto;
-    text-align: left;
-}
-.loginInput{
-    float: left;
     
 }
 .loginInput_wrap{
-   
-    margin: 0.5em;
+    margin-top: 20px;
 }
-.loginInput input{
-    height:2.5em;
-    margin-top: 1em;
-    width: 18em;
-    margin-right: 1em;
-    padding-left: 0.5em;
-    font-size: large;
-    
+.LoginId, .LoginPw {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #ddd;
+    font-size: 20px;
+    padding: 5px;
+    outline: none;
+    width: 330px;
+    height: 40px;
+}
+.btn_area{
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    margin: 0 auto;
+   
+    width: 340px;
+    margin-top: 30px;
+}
+
+.btn_span{
+    color: black;
+}
+.loginbtn_span{
+    font-weight: bolder;
+    font-size: 15px;
 }
 .loginbtn{
-   margin-top: 1.4em;
-    height: 8.5em;
-    width: 8em;
+   
+    background-color: steelblue;
+    border: none;
+    color: white;
+    padding: 5px;
+    outline: none;
+    width: 120px;
+    height: 40px;
 }
 .LoginUtile{
+    font-size: 15px;
     text-align: right;
-    margin: 1em 0;
-    margin-right: 1.8em;
+    
 }
 .Notice_list{
-    margin: 2em 0;
-    text-align: center;
+    margin: 0 auto;
+    width: 340px;
+    margin-top: 50px;
+    border: 1px solid black;
+
 }
-.Notice_listUl li{
-    margin:2em 0;
+.hr-sect {
+   
+    width: 340px;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	font-size: 12px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.hr-sect::before,
+.hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 16px;
 }

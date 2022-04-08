@@ -1,0 +1,9 @@
+.header_wrap{
+    border: 1px solid black;
+   
+    height: 71px;
+    z-index: 999;
+    background-color: darkorchid;
+  
+    color: wheat;
+}

@@ -4,9 +4,9 @@ import Login from "../Login/Login"
 
 import Notice from "../Login/notice";
 import Join from "./Join";
-import LoginUtile from '../Login/LoginUtile';
+
 import { Context } from '../Login/Context';
-const Home = (props) =>{
+const Home = () =>{
   
     const [viewPage,setViewPage] =useState(false);
    

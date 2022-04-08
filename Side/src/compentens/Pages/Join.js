@@ -33,7 +33,24 @@ var PWD_RULE=  /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
 
 
 //Handler
-const HandleInputEmail =(e)=>{setuserEmail(e.target.value);}
+const HandleInputEmail =(e)=>{setuserEmail(e.target.value);
+ 
+  fetch('여기다가 쿼리문 넘겨받을 주소', {
+    method: 'POST',                                      //------ㅣ 
+    headers: {                                           //------ㅣ    기본문구
+        'Content-Type': 'application/json',              //------ㅣ 
+    },                                                   //------ㅣ 
+    body: JSON.stringify({                               //------ㅣ
+        'userEmail' :'userEmail'                          //보낼값
+    })
+  })
+  .then(response => response.json())
+  .then(response => {
+    if (response) {
+   
+    }
+  })
+}
  
 
  
@@ -52,7 +69,7 @@ const HandleInputPwCh =(e)=> {
      
 const HandleInputName =(e)=> setuserName(e.target.value) 
 const HandleInputPhone =(e)=> setuserPhone(e.target.value) 
-const HandleSubmit =(params,e) => {e.preventDefault(); console.log(params) }  
+const HandleSubmit =(e) => {e.preventDefault();  }  
 
 // // useEffect
  //비밀번호 정규식

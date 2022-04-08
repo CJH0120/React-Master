@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import '../../assets/login.css';
 
 import LoginSlide from "./LoginSlide";
@@ -34,32 +35,59 @@ return(
   
   <>
 <div className="rightForm">
+  
   <div className="rightForm_wrap">
-    <form>
+      <div className="chooseMain">
+      <button className="ChooseLogin"><span>로그인</span></button>
+      <button className="ChooseJoin"><span>회원가입</span></button>
+      </div> 
       
-        <div>
-        <h2><img src="https://my.snu.ac.kr/mysnu/images/login/txt_login.png"/></h2>
+        <div className="square_main">
+          <p>여기다가 뭘쓸까</p>
+
         </div>
-        
+    
+    <div className="hr-sect"> or </div>
+      
+    <form>
         <div className="loginInput_wrap">
-        <div className="loginInput">
+        
+       
         <input 
         value={InputId}
         onChange={HandleInputId}
+        className="LoginId"
         />
          <br/>
+
+         
         <input 
         value={InputPw}
         onChange={HandleInputPw}
+        className="LoginPw"
         type={"password"}/>
-        </div>
-        
-        <button onClick={HandleLogin} className="loginbtn"><span>로그인</span></button>
-        </div>
+        <br/>
+       
+
+      <div className="btn_area">
+      <Link
+       to='/Main' state={{ InputId: InputId, InputPw:InputPw, userState:'1'}}> 
+      <button className="loginbtn"><span className="loginbtn_span">로그인</span></button>
+      </Link>
+      
+      <Link
+       to='/Main' state={{ InputId: InputId, InputPw:InputPw, userState:'1'}}> 
+      <span className="btn_span"><LoginUtile /></span>
+      </Link>
+      </div>
+
+      </div>
+
     </form>
-    <LoginUtile />
+    
     <Notice_list/>
     <LoginSlide/>
+    
     </div>
     </div>
     </>
