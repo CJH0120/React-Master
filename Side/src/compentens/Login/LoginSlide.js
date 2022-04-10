@@ -1,4 +1,6 @@
 import '../../assets/login.css';
+import React from 'react';
+
 const LoginSlide = () =>{
 
 return(

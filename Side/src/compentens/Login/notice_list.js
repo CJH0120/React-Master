@@ -1,3 +1,4 @@
+import React from 'react';
 
 import '../../assets/login.css';
 const  Notice_list = () =>{

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Main_1 from "./state1/main_1";
 import Main_2 from "./state2/main_2";
 import Main_3 from "./state3/main_3";

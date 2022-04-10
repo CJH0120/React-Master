@@ -1,9 +1,62 @@
 .header_wrap{
-    border: 1px solid black;
+  
    
-    height: 71px;
-    z-index: 999;
-    background-color: darkorchid;
+    height: 400px;
+   
+    background: linear-gradient(20deg,#11cdef,#1171ef)!important;  
   
     color: wheat;
 }
+.header_top{
+   
+    display: flex;
+   height: 60px;
+   margin-left: 248px;
+   justify-content: right;
+   align-items: center;
+   padding:20px
+
+   
+}
+.searchInput{
+    width: 230px;
+    height: 30px;
+    border-radius: 2em;
+    background: transparent;
+    border: 1px solid;
+    border-color: white;
+       outline: none;
+       padding: 5px;
+       padding-left: 50px;
+       font-size: 25px;
+       color: white;
+    
+    
+}
+.serchlabel{
+   position: absolute;
+   top: 17px;
+   margin-left: 10px;
+}
+.serchlabel img{
+    width: 25px;
+    height: 25px;
+    ;
+}
+.userProfile{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.userProfile{
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+.userProfile img{
+    width: 45px;
+    border-radius: 1rem;
+}
+.userProfileName{
+    padding-left: 10px;
+}
+

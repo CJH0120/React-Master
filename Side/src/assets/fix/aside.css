@@ -1,20 +1,36 @@
 .asdie_wrap{
-    border: 1px solid black;
-    position: absolute;
-    width: 300px;
-    height: 800px;
-    background-color: steelblue;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 200px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    overflow-y: auto;
+    background-color: white;
+    
 
 }
 .asdie_top{
-    border: 1px solid black;
-    background-color: cornflowerblue;
+   
+   
     height: 60px;
     padding-top: 10px;
     padding-left: 10px;
 }
-.asdie_wrap  ul li{
-margin-top: 40px;
-border: 1px solid black;
-height: 40px;
+.menu_nav{
+    margin-top: 20px;
+}
+.menu_nav:first-child{
+    margin-top: 10px;
+}
+.menu_nav img{
+    width: 17px;
+    height: 17px;
+    margin-right: 20px;
+}
+.menu_nav a{
+    font-size: 20px;
+    
 }
