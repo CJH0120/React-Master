@@ -16,7 +16,7 @@
 - 공부 메모  [220.04.05 리액트메모.txt](https://github.com/CJH0120/React_Study-Project/files/8419023/220.04.05.txt)
 
 
-개인프로젝트 진행중
+개인프로젝트 진행중 (Side 프로젝트)
 프로젝트는 학사관리 시스템을 만들고있다.
 아래는 페이지 흐름도 이다. 학생 페이지부터 구현할 생각이다
 ![흐름도](https://user-images.githubusercontent.com/97073471/162671215-24d9e4ae-c27f-46e4-880d-76d87cce67b5.PNG)
